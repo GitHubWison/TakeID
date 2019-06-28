@@ -6,6 +6,7 @@ import android.os.Environment
 import android.os.Handler
 import android.os.Message
 import com.dex.toolslibrary.scaleBetween
+import com.dex.toolslibrary.toGray
 import com.googlecode.tesseract.android.TessBaseAPI
 import java.io.BufferedOutputStream
 import java.io.File
@@ -147,11 +148,7 @@ class PictureDealRunnable(val handler: Handler, val data: ByteArray, private val
                 "0123456789xX"
             )
         })
-//        cutBitmap(   cutBitmap,
-//            TakeIdConst.id_no_left,
-//            TakeIdConst.id_no_top,
-//            TakeIdConst.id_no_width,
-//            TakeIdConst.id_height_except_address)
+
 
         /////////////裁剪信息///////////////
 
@@ -176,7 +173,9 @@ class PictureDealRunnable(val handler: Handler, val data: ByteArray, private val
         val top: Int = (bitmapHeight.toDouble() * topRate).toInt()
         val width = (bitmapWidth.toDouble() * widthRate).toInt()
         val height = (bitmapHeight.toDouble() * heightRate).toInt()
-        val resBitmap = Bitmap.createBitmap(bitmap, left, top, width, height)
+        val resBitmapOriginal= Bitmap.createBitmap(bitmap, left, top, width, height)
+        val resBitmap = resBitmapOriginal.toGray()
+
 //            .toGray()
         resBitmap.compress(Bitmap.CompressFormat.JPEG, 100, BufferedOutputStream(FileOutputStream(file)))
 //        val text = TessInstance.setImage(resBitmap)

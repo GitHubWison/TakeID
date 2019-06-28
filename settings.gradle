@@ -1,1 +1,2 @@
-include ':app', ':takeidlibrary'
+include ':app', ':takeidlibrary',':toolslibrary'
+project(':toolslibrary').projectDir = new File("/home/xuqiwei/documents/android/project/mymodule/Tools/toolslibrary")

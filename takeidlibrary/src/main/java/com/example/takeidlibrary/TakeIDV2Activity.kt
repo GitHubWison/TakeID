@@ -1,7 +1,6 @@
 package com.example.takeidlibrary
 
 import android.app.Activity
-import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -12,7 +11,6 @@ import android.os.Environment
 import android.os.Handler
 import android.os.Message
 import android.support.constraint.ConstraintLayout
-import android.util.Log
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.View
@@ -25,7 +23,6 @@ import com.dex.toolslibrary.findScreenSize
 import com.dex.toolslibrary.scaleBetween
 import pub.devrel.easypermissions.EasyPermissions
 import java.io.File
-import java.io.Serializable
 import java.util.concurrent.Executors
 
 
